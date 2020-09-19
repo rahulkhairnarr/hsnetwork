@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name 127.0.0.1 hsnetwork.com www.hsnetwork.com;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/ubuntu/hsnetwork;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/hsnetwork/hsnetwork.sock;
+    }
+}

@@ -31,8 +31,6 @@ class PostListView(generics.ListAPIView):
         # Get User List of Following
         user_following = Contacts.objects.values_list('following', flat=True).filter(user=user)
 
-        print(user_following)
-
         # Filter All Post based on Following
         post_list = self.model.objects.filter(user__in=user_following).distinct()
 
