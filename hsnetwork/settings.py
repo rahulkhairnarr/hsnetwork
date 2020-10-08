@@ -93,24 +93,35 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'postgres',
-            'USER': 'hobnob',
-            'PASSWORD': 'hobnobaum',
-            'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
-            'PORT': '5432',
-        }
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'postgres',
+#             'USER': 'hobnob',
+#             'PASSWORD': 'hobnobaum',
+#             'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
+#             'PORT': '5432',
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'hobnob',
+        'PASSWORD': 'hobnobaum',
+        'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+}
 
 
 # Password validation
