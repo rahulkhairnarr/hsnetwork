@@ -62,7 +62,7 @@ class UserProfileView(APIView):
             # Response User with serialize data
             return Response(profile_serializer.data, status=status.HTTP_201_CREATED)
         else:
-            return Response(profile_serializer.errors, status.status.HTTP_400_BAD_REQUEST)
+            return Response(profile_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PeopleSuggestion(generics.ListAPIView):
