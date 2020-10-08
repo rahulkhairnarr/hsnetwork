@@ -97,9 +97,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
-                'USER': 'hobnob_admin',
+                'USER': 'hobnob',
                 'PASSWORD': 'hobnobaum',
-                'HOST': 'hobnobaum.cbsyniih1ku9.ap-south-1.rds.amazonaws.com',
+                'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
                 'PORT': '5432',
     }
 }
