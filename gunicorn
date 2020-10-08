@@ -1,5 +1,0 @@
-[Service]
-User=ubuntu
-Group=www-data
-WorkingDirectory=/home/ubuntu/hsnetwork
-ExecStart=/home/ubuntu/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/hsnetwork/hsnetwork.sock hsnetwork.wsgi:application
