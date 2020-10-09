@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 #             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #         }
 #     }
-
+# django.contrib.gis.db.backends.postgis
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
