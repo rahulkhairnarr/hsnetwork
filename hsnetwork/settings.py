@@ -114,7 +114,7 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 # django.contrib.gis.db.backends.postgis
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'postgres',
         'USER': 'hobnob',
         'PASSWORD': 'hobnobaum',
