@@ -97,11 +97,11 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 #     DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': 'postgres',
-#             'USER': 'hobnob',
-#             'PASSWORD': 'hobnobaum',
-#             'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
-#             'PORT': '5432',
+            # 'NAME': 'postgres',
+            # 'USER': 'hobnob',
+            # 'PASSWORD': 'hobnobaum',
+            # 'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
+            # 'PORT': '5432',
 #         }
 #     }
 # else:
@@ -112,18 +112,37 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 #         }
 #     }
 # django.contrib.gis.db.backends.postgis
-if 'RDS_DB_NAME' in os.environ:
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#             'NAME': os.environ['RDS_DB_NAME'],
+#             'USER': os.environ['RDS_USERNAME'],
+#             'PASSWORD': os.environ['RDS_PASSWORD'],
+#             'HOST': os.environ['RDS_HOSTNAME'],
+#             'PORT': os.environ['RDS_PORT'],
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+
+try:
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
+            'NAME': 'postgres',
+            'USER': 'hobnob',
+            'PASSWORD': 'hobnobaum',
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
-else:
+except:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
