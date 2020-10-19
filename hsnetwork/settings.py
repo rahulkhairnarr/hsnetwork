@@ -135,7 +135,7 @@ try:
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'postgres',
+            'NAME': 'hobnob',
             'USER': 'hobnob',
             'PASSWORD': 'hobnobaum',
             'HOST': 'localhost',
