@@ -97,11 +97,11 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 #     DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            # 'NAME': 'postgres',
-            # 'USER': 'hobnob',
-            # 'PASSWORD': 'hobnobaum',
-            # 'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
-            # 'PORT': '5432',
+# 'NAME': 'postgres',
+# 'USER': 'hobnob',
+# 'PASSWORD': 'hobnobaum',
+# 'HOST': 'aa1phfn1b7fv6fj.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
+# 'PORT': '5432',
 #         }
 #     }
 # else:
@@ -131,24 +131,35 @@ WSGI_APPLICATION = 'hsnetwork.wsgi.application'
 #         }
 #     }
 
-try:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'postgres',
-            'USER': 'hobnob',
-            'PASSWORD': 'hobnobaum',
-            'HOST': 'hobnob.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
-            'PORT': '5432',
-        }
+# try:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#             'NAME': 'postgres',
+#             'USER': 'hobnob',
+#             'PASSWORD': 'hobnobaum',
+#             'HOST': 'hobnob.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
+#             'PORT': '5432',
+#         }
+#     }
+# except:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'postgres',
+        'USER': 'hobnob',
+        'PASSWORD': 'hobnobaum',
+        'HOST': 'hobnob.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
-except:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+}
 
 
 # Password validation
