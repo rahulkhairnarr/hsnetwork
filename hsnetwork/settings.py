@@ -135,10 +135,10 @@ try:
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'hobnob',
+            'NAME': 'postgres',
             'USER': 'hobnob',
             'PASSWORD': 'hobnobaum',
-            'HOST': 'localhost',
+            'HOST': 'hobnob.ckm6qi6cqc6u.us-west-2.rds.amazonaws.com',
             'PORT': '5432',
         }
     }
